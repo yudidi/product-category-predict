@@ -56,7 +56,7 @@ public class ResourceLoader {
         if (StringUtils.isNoneBlank(sparkConfigProperties.getDependenceJar())) {
             sparkConf.setJars(sparkConfigProperties.getDependenceJar().split(","));
         }
-
+        // todo 这个什么作用?
         if (MapUtils.isNotEmpty(sparkConfigProperties.getProperties())) {
             sparkConfigProperties.getProperties().forEach((key, value) -> sparkConf.set((String) key, (String) value));
         }
