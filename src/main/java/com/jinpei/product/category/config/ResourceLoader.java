@@ -49,7 +49,8 @@ public class ResourceLoader {
                 || StringUtils.isBlank(sparkConfigProperties.getMasterUrl())) {
             throw new IllegalArgumentException("The property : [category.spark.appName] [category.spark.masterUrl] cannot be null ");
         }
-
+        System.out.println("sparkConfigProperties");
+        System.out.println(sparkConfigProperties);
         SparkConf sparkConf = new SparkConf().setAppName(sparkConfigProperties.getAppName())
                 .setMaster(sparkConfigProperties.getMasterUrl());
         if (StringUtils.isNoneBlank(sparkConfigProperties.getDependenceJar())) {
