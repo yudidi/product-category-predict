@@ -89,7 +89,7 @@ public class FeatureExtractor {
         for (int i = 0, length = names.size(); i < length; i++) {
             segmentNames.add(new String[]{StringUtils.strip(names.get(i)), StringUtils.strip(terms.get(i))});
         }
-
+        log.info("segmentNames {}", segmentNames);
         JavaRDD<Row> textRowRDD = sparkContext.parallelize(segmentNames)
                 .map(RowFactory::create);
         StructType schema = new StructType(new StructField[]{
